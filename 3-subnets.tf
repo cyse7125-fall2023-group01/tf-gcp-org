@@ -1,5 +1,5 @@
 data "google_compute_zones" "available" {
-  
+
 }
 
 resource "google_compute_subnetwork" "private_subnets" {

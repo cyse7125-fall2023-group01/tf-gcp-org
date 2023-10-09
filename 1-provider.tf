@@ -1,6 +1,15 @@
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "5.0.0"
+    }
+  }
+}
+
 provider "google" {
-  # credentials = var.service_account_credentials
-  credentials = file("/Users/sriha/Desktop/advcloud/gcp-account/service-account-creds/csye-7125-sa/gcp_sa_key.json")
+  # Configuration options
+  credentials = file(var.service_account_credentials)
   project     = var.project_id
   region      = var.default_region
 }

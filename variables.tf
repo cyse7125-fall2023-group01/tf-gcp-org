@@ -29,3 +29,14 @@ variable "service_account_email" {
 variable "compute_instance_availability_zone" {
   description = "availability zone in the configured region for compute instance"
 }
+
+variable "cluster_name" {
+  type        = string
+  description = "The name of the cluster"
+  default     = "webapp-private-cluster"
+}
+
+# variable "bastion_members" {
+#   type        = list(string)
+#   description = "List of users, groups, SAs who need access to the bastion host"
+# }

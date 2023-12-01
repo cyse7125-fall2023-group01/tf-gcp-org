@@ -198,7 +198,10 @@ resource "google_container_node_pool" "general" {
     auto_repair  = true
     auto_upgrade = true
   }
-
+ autoscaling {
+    min_node_count = 3
+    max_node_count = 6
+  }
   node_config {
     preemptible  = false
     image_type = "COS_CONTAINERD"
@@ -227,8 +230,8 @@ resource "google_container_node_pool" "spot" {
   }
 
   autoscaling {
-    min_node_count = 0
-    max_node_count = 7
+    min_node_count = 3
+    max_node_count = 6
   }
 
   node_config {

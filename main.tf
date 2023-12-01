@@ -1,12 +1,12 @@
 provider "google" {
- project = "root-mapper-401202"
- credentials = file("gcp_sa_key.json")
+ project = var.project
+ credentials = file(var.filename)
 }
 data "google_client_config" "provider"{}
 
 module "gke_cluster"{
     source = "./gke_cluster"
-    project = "root-mapper-401202"
+    project = var.project
     region = "us-east1"
     subnet_private_ip_cidr = "10.0.0.0/18"
     subnet_public_ip_cidr = "172.17.1.0/28"
